@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Events</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../public/assets/images/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../public/assets/css/source/bootstrap.min.css">
+
+    <!-- Google font -->
+    <link rel="stylesheet" href="../public/assets/css/source/nunito-fonts.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="../public/assets/icon/icon.css">
+
+    <!-- sass -->
+    <link rel="stylesheet" href="../public/assets/css/sass.css">
+
+    <!-- Frontent css -->
+    <link rel="stylesheet" href="../public/assets/css/frontent.css">
+
+    <!-- Event css -->
+    <link rel="stylesheet" href="../public/assets/css/event.css">
+</head>
+
+<body>
+    <!-- Whole container starts -->
+    <div class="container-fluid p-0">
+        <!-- Navbar starts -->
+        <nav class="navbar d-flex primary-bg navbar-expand-lg fixed-top">
+            <a class="navbar-brand p-0" href="../index.html">
+                <!-- Logo -->
+                <img src="../public/assets/images/logo.jpg" alt="School Logo">
+                <span class="text-white">School Name</span>
+            </a>
+            <button class="navbar-toggler text-white btn" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <!-- Home link -->
+                        <a class="nav-link d-flex align-items-center text-white" href="../index.html"><span
+                                class="icon-home-filled nav-link-icon"></span>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Event link -->
+                        <a href="events.html" class="nav-link d-flex align-items-center text-white"><span
+                                class="icon-calendar-filled nav-link-icon"></span>Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Login link -->
+                        <a class="nav-link d-flex align-items-center text-white" href="../auth-layouts/login.html"><span
+                                class="icon-user-filled nav-link-icon"></span>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Contact link -->
+                        <a class="nav-link d-flex align-items-center text-white" href="contact.html"><span
+                                class="icon-phone-call-round-filled nav-link-icon"></span>Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Navbar ends -->
+        <!-- Header with Calender -->
+        <header class="row m-0" style="padding-top: 80px; height: 100vh;">
+            <div class="col-12 col-md-12 col-lg-6 h-100 event-show secondary-bg d-flex align-items-center justify-content-center">
+                <div class="clock-holder">
+                    <div class="clock">
+                        <div class="digital-clock text-white" id="digital-clock"></div>
+                        <div class="hour"></div>
+                        <div class="min"></div>
+                        <div class="sec"></div>
+                    </div>
+                    <h1 class="text-white" id="dayOutput"></h1>
+                    <h3 class="text-white" id="dateOutput"></h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 h-100 d-flex align-items-center justify-content-center" style="position: relative;">
+                <img src="../public/assets/images/5163faf195d9bb1072e51f2ab30e1179.jpg" alt="" style="position: absolute; width: 300px; top: 0; left: 0;">
+                <img src="../public/assets/images/b75de0656aab7711ea729d12c73f0bc0.png" alt="" style="position: absolute; width: 300px; bottom: 0; right: 50px;">
+                <div class="calendar-holder" style="max-width: 450px; border-radius: 8px; overflow: hidden;">
+                    <div class="calendar bg-white box-shadow">
+                        <div class="d-flex primary-bg justify-content-between">
+                            <button class="btn previous-month" onclick="previousMonth()"><span class="icon-arrow-left-sign-to-navigate"></span></button>
+                            <div class="month-year text-center text-white p-3"
+                                style="font-size: 20px; font-weight: 700;" id="month-year"></div>
+                            <button class="btn next-month" onclick="nextMonth()"><span class="icon-arrow-right-sign-to-navigate"></span></button>
+                        </div>
+                        <table class="table table-borderless" id="calendar-table">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Footer for small device starts -->
+        <footer class="fixed-bottom mobile-footer primary-bg">
+            <ul class="d-flex w-100 justify-content-between align-items-center m-0 p-0">
+                <li>
+                    <a class="text-white" href="../index.html">
+                        <span class="icon-home-filled text-center d-block"></span>
+                        <span class="d-block" style="font-size: 12px;">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white" href="tel:+9779815979824">
+                        <span class="icon-phone-call-filled text-center d-block"></span>
+                        <span class="d-block" style="font-size: 12px;">Call</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white" href="mailto:techwithtipsx@gmail.com">
+                        <span class="icon-email-filled d-block text-center"></span>
+                        <span class="d-block" style="font-size: 12px;">Mail</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-white" href="../auth-layouts/login.html">
+                        <span class="icon-user-filled d-block text-center"></span>
+                        <span class="d-block" style="font-size: 12px;">Login</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        <!-- Footer for small device ends -->
+    </div>
+    <!-- Whole container ends -->
+</body>
+<!-- jQuery -->
+<script src="../public/assets/js/source/jquery.min.js"></script>
+
+<!-- Popper.js -->
+<script src="../public/assets/js/source/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="../public/assets/js/source/bootstrap.min.js"></script>
+
+<!-- Event js -->
+<script src="../public/assets/js/event.js"></script>
+
+<!-- Calendar js -->
+<script src="../public/assets/js/calendar.js"></script>
+</html>

@@ -1,0 +1,173 @@
+.whole-content-holder {
+    background-color: rgb(230, 229, 229);
+    overflow-x: hidden;
+}
+
+/* ----------------- sidebar starts ---------------- */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    transition: width 0.5s ease;
+}
+
+.school-name {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.s-h-name {
+    display: none;
+    margin: -8px;
+}
+
+.sidebar hr {
+    color: var(--primary-color);
+}
+
+.sidebar-link-holder {
+    margin: 0px 5px;
+}
+
+.sidebar-link-icon {
+    padding-right: 20px;
+    color: var(--primary-color);
+}
+
+.drop-down {
+    display: none;
+}
+
+.dropdown-icon {
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+}
+
+.sidebar ul li {
+    margin: 10px 0px;
+}
+
+.sidebar ul li a {
+    position: relative;
+}
+
+.dropdown-icon {
+    display: inline-block;
+    margin: -20px 0;
+}
+
+.dropdown-icon.open {
+    transform: rotate(180deg);
+}
+
+.sidebar .drop-down li a {
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--primary-color);
+}
+
+/* ----------------- toggle sidebar css ------------------ */
+.toggle-left-sidebar {
+    width: 60px;
+}
+
+.sidebar-link-name{
+    color: var(--primary-color);
+}
+
+@media only screen and (min-width: 992px) {
+    .toggle-s-f-name {
+        display: none;
+    }
+
+    .toggle-s-h-name {
+        display: flex;
+    }
+
+    .sidebar-link-name {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .dropdown-icon-toggle {
+        display: none;
+    }
+
+    .sidebar-drop-down-toggle {
+        background-color: white;
+        padding: 0;
+        margin-left: 35px;
+        width: 180px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: var(--box-shadow);
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .sidebar {
+        margin-left: -240px;
+        transition: margin 0.5s ease;
+    }
+
+    .toggle-left-sidebar {
+        width: 240px;
+        margin: 0px;
+    }
+}
+
+/* ----------------- sidebar ends ---------------- */
+
+/* ----------------- whole-content starts ---------------- */
+.whole-content {
+    margin-left: 240px;
+    min-height: 100vh;
+    transition: margin 0.5s ease;
+}
+
+
+/* ----------------- navbar starts ------------------ */
+.dropdown-content {
+    position: absolute;
+    display: none;
+    top: 50px;
+    width: 100%;
+}
+
+.dropdown-content li {
+    margin: 10px 0px;
+}
+
+.dropdown-content li a {
+    font-size: 14px;
+    padding: 0px 5px;
+}
+
+.nav-dropdown-link-icon{
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+/* ----------------- toggle whole-content css ------------------ */
+.toggle-whole-content {
+    margin-left: 60px;
+}
+
+@media only screen and (max-width: 991px) {
+    .whole-content {
+        margin-left: 0px;
+    }
+
+    .toggle-whole-content {
+        margin-left: 240px;
+        margin-right: -240px;
+    }
+}
+
+/* ----------------- navbar ends ------------------ */
+
+
+
+/* ----------------- whole-content ends ---------------- */

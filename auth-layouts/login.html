@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Login</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../public/assets/images/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../public/assets/css/source/bootstrap.min.css">
+
+    <!-- Google font -->
+    <link rel="stylesheet" href="../public/assets/css/source/nunito-fonts.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="../public/assets/icon/icon.css">
+
+    <!-- sass -->
+    <link rel="stylesheet" href="../public/assets/css/sass.css">
+
+    <!-- Auth css -->
+    <link rel="stylesheet" href="../public/assets/css/auth.css">
+</head>
+
+<body>
+    <audio id="errorSound" src="../public/assets/audio/error-sound-fx.wav"></audio>
+
+    <!-- Whole container starts -->
+    <div class="container-fluid p-0 bg-white">
+        <div class="row justify-content-center align-items-center vh-100 m-0">
+            <div class="col-12 col-lg-10">
+                <div class="card" style="overflow: hidden;">
+                    <div class="row g-0" style="min-height: 90vh;">
+                        <div class="col-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
+                            <div class="row justify-content-center">
+                                <!-- Logo -->
+                                <a href="../index.html" class="logo">
+                                    <img src="../public/assets/images/logo.jpg" alt="">
+                                </a>
+                                <h4 class="primary-color text-center">LOGIN</h4>
+                                <div class="col-12" style="max-width: 320px;">
+                                    <form action="" class="row g-1">
+                                        <div class="col-12">
+                                            <div class="input-group" style="position: relative;">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text primary-bg">
+                                                        <span class="icon-user-filled icon text-white"></span>
+                                                    </span>
+                                                </div>
+                                                <!-- username -->
+                                                <input type="text" class="form-control" id="username"
+                                                    placeholder="Username" required autocomplete="username"
+                                                    oninput="checkUsername()">
+                                            </div>
+                                            <!-- username error -->
+                                            <div class="error-message text-center" id="username-error"></div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <span class="icon-lock-filled icon text-white"></span>
+                                                    </span>
+                                                </div>
+                                                <!-- password -->
+                                                <input type="password" class="form-control" id="password"
+                                                    placeholder="Password" style="padding-right: 40px;" required
+                                                    autocomplete="current-password" oninput="checkPassword()">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" style="cursor: pointer;"
+                                                        onclick="togglePasswordVisibility()">
+                                                        <span id="show-password-icon" class="icon-eye-filled"></span>
+                                                        <span id="hide-password-icon" class="icon-hidden-filled"
+                                                            style="display: none;"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- password error -->
+                                            <div class="error-message text-center" id="password-error"></div>
+                                        </div>
+                                    </form>
+                                    <br>
+                                    <!-- login btn -->
+                                    <button type="submit" class="btn btn-block primary-bg text-white w-100"
+                                        onclick="authenticate()">Login</button>
+                                    <!-- forgot password link -->
+                                    <p class="text-center p-2"><a href="../admin-dashboard/dashboard.html"
+                                            class="primary-color">Forgot Password?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6 primary-bg animation-box d-flex align-items-center justify-content-center"
+                            style="position: relative;">
+                            <div class="main">
+                                <div class="big-circle">
+                                    <div class="icon-block">
+                                        <span class="icon-user-account-outline rotationg-icon"></span>
+                                    </div>
+                                    <div class="icon-block">
+                                        <span class="icon-friends-outline rotationg-icon"></span>
+                                    </div>
+                                    <div class="icon-block">
+                                        <span class="icon-asset-management-outline rotationg-icon"></span>
+                                    </div>
+                                    <div class="icon-block">
+                                        <span class="icon-contract-outline rotationg-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="circle">
+                                    <div class="icon-block">
+                                        <span class="icon-email-outline rotationg-icon"></span>
+                                    </div>
+                                    <div class="icon-block">
+                                        <span class="icon-wages-2-outline rotationg-icon"></span>
+                                    </div>
+                                    <div class="icon-block">
+                                        <span class="icon-ranking-outline rotationg-icon"></span>
+                                    </div>
+                                    <div class="icon-block">
+                                        <span class="icon-graduation-hat-outline rotationg-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="center-logo">
+                                    <img src="../public/assets/images/worker.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Whole container ends -->
+</body>
+<!-- jQuery -->
+<script src="../public/assets/js/source/jquery.min.js"></script>
+
+<!-- Popper.js -->
+<script src="../public/assets/js/source/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="../public/assets/js/source/bootstrap.min.js"></script>
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var showPasswordIcon = document.getElementById('show-password-icon');
+        var hidePasswordIcon = document.getElementById('hide-password-icon');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            showPasswordIcon.style.display = 'none';
+            hidePasswordIcon.style.display = 'inline';
+        } else {
+            passwordInput.type = 'password';
+            showPasswordIcon.style.display = 'inline';
+            hidePasswordIcon.style.display = 'none';
+        }
+    }
+</script>
+<script>
+    function checkUsername() {
+        var username = document.getElementById('username').value;
+        var errorElement = document.getElementById('username-error');
+        errorElement.textContent = !username ? 'Please enter a username.' : '';
+    }
+
+    function checkPassword() {
+        var password = document.getElementById('password').value;
+        var errorElement = document.getElementById('password-error');
+        errorElement.textContent = password.length < 8 ? 'Password must be at least 8 characters long.' : '';
+    }
+
+    function authenticate() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        checkUsername();
+        checkPassword();
+
+        // Play error sound only if there are errors
+        if (!username || password.length < 8) {
+            playErrorSound();
+            // Authentication failed
+            console.log('Authentication failed');
+        } else {
+            // Authentication successful
+            console.log('Authentication successful');
+        }
+    }
+
+    function playErrorSound() {
+        var errorSound = document.getElementById('errorSound');
+        errorSound.play();
+    }
+</script>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>School Name</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../public/assets/images/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../public/assets/css/source/bootstrap.min.css">
+
+    <!-- Google font -->
+    <link rel="stylesheet" href="../public/assets/css/source/nunito-fonts.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="../public/assets/icon/icon.css">
+
+    <!-- sass -->
+    <link rel="stylesheet" href="../public/assets/css/sass.css">
+
+    <!-- Dashboard css -->
+    <link rel="stylesheet" href="../public/assets/css/dashboard.css">
+</head>
+
+<body>
+    <div class="container-fluid whole-content-holder vh-100 p-0">
+        <!-- sidebar starts -->
+        <div class="sidebar p-2" id="left-sidebar">
+            <div class="card h-100 p-2 box-shadow ">
+                <a class="text-center p-2" href="dashboard.html">
+                    <p class="s-f-name m-0">
+                        <span class="school-name primary-color">School</span>
+                        <span class="school-name secondary-color">Name</span>
+                    </p>
+                    <p class="s-h-name">
+                        <span class="school-name primary-color">S</span>
+                        <span class="school-name secondary-color">N</span>
+                    </p>
+                </a>
+                <hr>
+                <ul class="p-0 sidebar-link-holder">
+                    <li><a class="d-flex align-items-center" href="dashboard.html"><span
+                                class="icon-dashboard-2-outline sidebar-link-icon"></span><span
+                                class="sidebar-link-name">Dashboard</span></a></li>
+                    <li><a class="d-flex align-items-center" href="#"><span
+                                class="icon-friends-outline sidebar-link-icon"></span><span
+                                class="sidebar-link-name">Students</span></a>
+                        <span class="icon-arrow-down-sign-to-navigate primary-color dropdown-icon"></span>
+                        <ul class="drop-down sidebar-drop-down">
+                            <li><a href="#">New Admission</a></li>
+                            <li><a href="#">Student Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="#"><span
+                                class="icon-user-outline sidebar-link-icon"></span><span
+                                class="sidebar-link-name">H.R</span></a>
+                        <span class="icon-arrow-down-sign-to-navigate primary-color dropdown-icon"></span>
+                        <ul class="drop-down sidebar-drop-down">
+                            <li><a href="#">Add HR</a></li>
+                            <li><a href="#">HR Management</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- sidebar ends -->
+
+        <!-- Whole content starts -->
+        <div class="whole-content p-2" id="whole-content">
+            <!-- navbar starts -->
+            <nav class="card box-shadow ">
+                <div class="card-body d-flex justify-content-between p-2">
+                    <button class="btn d-flex" id="toggle-left-Button">
+                        <span class="icon-menu primary-color"></span>
+                    </button>
+                    <!-- Custom dropdown HTML structure -->
+                    <div class="custom-dropdown dropdown d-flex" style="margin: -10px 10px;">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle color-primary"
+                            onclick="toggleDropdown()">
+                            <img src="../public/assets/images/logo.jpg" alt="" width="30" height="30"
+                                class="rounded-circle me-2">
+                            <strong class="user-name primary-color">School Name</strong>
+                        </a>
+                        <div class="dropdown-content card box-shadow" id="myDropdown">
+                            <div class="card-body p-2">
+                                <li><a class="d-flex align-items-center primary-color" href="#"><span class="icon-profile-outline nav-dropdown-link-icon"></span>My
+                                        Profile</a></li>
+                                <li><a class="d-flex align-items-center primary-color"  href="#"><span class="icon-power-off-outline nav-dropdown-link-icon"></span>Sign
+                                        out</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- navbar ends -->
+        </div>
+        <!-- Whole content ends -->
+    </div>
+</body>
+<!-- jQuery -->
+<script src="../public/assets/js/source/jquery.min.js"></script>
+
+<!-- Popper.js -->
+<script src="../public/assets/js/source/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="../public/assets/js/source/bootstrap.min.js"></script>
+
+<!-- Dashboard js -->
+<script src="../public/assets/js/dashboard.js"></script>
+
+
+</html>
